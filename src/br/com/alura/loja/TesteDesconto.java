@@ -9,13 +9,16 @@ import br.com.alura.loja.imposto.ISS;
 import br.com.alura.loja.imposto.Imposto;
 import br.com.alura.loja.orcamento.Orcamento;
 
-public class TesteImposto {
+public class TesteDesconto {
 	
 	public static void main(String[] args) {
-		Orcamento orcamento = new Orcamento(new BigDecimal("100"), 4);
 		
-		CalculadoraDeImposto calculadora = new CalculadoraDeImposto();
-		System.out.println(calculadora.calcular(orcamento, new ICMS()));
+		Orcamento orcamento = new Orcamento(new BigDecimal("200"), 4);
+		Orcamento segundo = new Orcamento(new BigDecimal("1000"), 1);
+		
+		CalculadoraDeDesconto calculadora = new CalculadoraDeDesconto();
+		System.out.println(calculadora.calcular(orcamento));
+		System.out.println(calculadora.calcular(segundo));
 	}
 
 }
